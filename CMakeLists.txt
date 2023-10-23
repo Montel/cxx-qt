@@ -110,9 +110,11 @@ add_compile_definitions(
 )
 
 if(UNIX AND NOT APPLE)
-    add_compile_definitions(
-        QT_STRICT_ITERATORS
-    )
+    if (NOT USE_QT5)
+        add_compile_definitions(
+            QT_STRICT_ITERATORS
+        )
+    endif()
 endif()
 
 find_program(MEMORYCHECK_COMMAND valgrind)
