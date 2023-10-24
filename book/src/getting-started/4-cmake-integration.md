@@ -46,7 +46,7 @@ edition = "2021"
 
 We'll have to do multiple things:
 - Instruct cargo to create a staticlib
-- Add `cxx`, `cxx-qt`, as well as `cxx-qt-lib` as dependencies
+- Add `cxx`, `cxx-qt`, as well as `cxx-qt-core-lib` as dependencies
 - Add `cxx-qt-build` as a build dependency
 
 > Note that in order for cxx-qt to work, the `qmake` executable must be located. This is because cxx-qt relies on `qmake` to locate the necessary Qt libraries and header files on your system.

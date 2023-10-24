@@ -4,14 +4,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QPointF;
+use cxx_qt_core_lib::QPointF;
 
 #[cxx::bridge]
 mod qpointf_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qpointf.h");
+        include!("cxx-qt-core-lib/qpointf.h");
 
-        type QPointF = cxx_qt_lib::QPointF;
+        type QPointF = cxx_qt_core_lib::QPointF;
     }
 
     extern "Rust" {

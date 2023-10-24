@@ -3,13 +3,13 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QVector;
+use cxx_qt_core_lib::QVector;
 
 #[cxx::bridge]
 mod qvector_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qvector.h");
-        type QVector_i32 = cxx_qt_lib::QVector<i32>;
+        include!("cxx-qt-core-lib/qvector.h");
+        type QVector_i32 = cxx_qt_core_lib::QVector<i32>;
     }
 
     extern "Rust" {

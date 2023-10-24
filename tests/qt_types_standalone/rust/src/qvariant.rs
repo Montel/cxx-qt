@@ -3,7 +3,7 @@
 // SPDX-FileContributor: Gerhard de Clercq <gerhard.declercq@kdab.com>
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
-use cxx_qt_lib::{
+use cxx_qt_core_lib::{
     QByteArray, QColor, QDate, QDateTime, QPoint, QPointF, QRect, QRectF, QSize, QSizeF, QString,
     QTime, QTimeZone, QUrl, QVariant,
 };
@@ -36,9 +36,9 @@ mod qvariant_cxx {
     }
 
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qvariant.h");
+        include!("cxx-qt-core-lib/qvariant.h");
 
-        type QVariant = cxx_qt_lib::QVariant;
+        type QVariant = cxx_qt_core_lib::QVariant;
     }
 
     extern "Rust" {
@@ -82,7 +82,7 @@ fn construct_qvariant(test: VariantTest) -> QVariant {
     }
 }
 
-fn read_qvariant(v: &cxx_qt_lib::QVariant, test: VariantTest) -> bool {
+fn read_qvariant(v: &cxx_qt_core_lib::QVariant, test: VariantTest) -> bool {
     match test {
         VariantTest::Bool => match v.value::<bool>() {
             Some(b) => !b,

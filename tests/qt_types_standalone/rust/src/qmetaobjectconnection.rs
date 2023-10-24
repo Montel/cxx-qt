@@ -3,14 +3,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QMetaObjectConnection;
+use cxx_qt_core_lib::QMetaObjectConnection;
 
 #[cxx::bridge]
 mod qmetaobjectconnection_cxx {
     #[namespace = "rust::cxxqtlib1"]
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qmetaobjectconnection.h");
-        type QMetaObjectConnection = cxx_qt_lib::QMetaObjectConnection;
+        include!("cxx-qt-core-lib/qmetaobjectconnection.h");
+        type QMetaObjectConnection = cxx_qt_core_lib::QMetaObjectConnection;
     }
 
     extern "Rust" {

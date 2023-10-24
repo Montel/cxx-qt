@@ -82,7 +82,7 @@ In our case that means:
 
 For `i32`, CXX-Qt already knows how to translate it.
 A `QString` however is unknown to CXX.
-Luckily, the [`cxx_qt_lib`](https://docs.rs/cxx-qt-lib/latest/cxx_qt_lib/) crate already wraps many Qt types for us.
+Luckily, the [`cxx_qt_core_lib`](https://docs.rs/cxx-qt-core-lib/latest/cxx_qt_core_lib/) crate already wraps many Qt types for us.
 We can just import them like any other CXX type:
 ``` rust, ignore
 {{#include ../../../examples/qml_minimal/rust/src/cxxqt_object.rs:book_qstring_import}}

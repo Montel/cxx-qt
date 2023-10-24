@@ -3,14 +3,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::{QMap, QMapPair_QString_QVariant, QString, QVariant};
+use cxx_qt_core_lib::{QMap, QMapPair_QString_QVariant, QString, QVariant};
 
 #[cxx::bridge]
 mod qmap_cxx {
     // ANCHOR: book_qmap
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qmap.h");
-        type QMap_QString_QVariant = cxx_qt_lib::QMap<cxx_qt_lib::QMapPair_QString_QVariant>;
+        include!("cxx-qt-core-lib/qmap.h");
+        type QMap_QString_QVariant = cxx_qt_core_lib::QMap<cxx_qt_core_lib::QMapPair_QString_QVariant>;
     }
     // ANCHOR_END: book_qset
 

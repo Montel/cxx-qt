@@ -4,14 +4,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QTime;
+use cxx_qt_core_lib::QTime;
 
 #[cxx::bridge]
 mod qtime_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qtime.h");
+        include!("cxx-qt-core-lib/qtime.h");
 
-        type QTime = cxx_qt_lib::QTime;
+        type QTime = cxx_qt_core_lib::QTime;
     }
 
     extern "Rust" {

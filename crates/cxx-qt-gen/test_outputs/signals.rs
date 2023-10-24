@@ -2,21 +2,21 @@
 mod ffi {
     #[namespace = ""]
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qpoint.h");
-        type QPoint = cxx_qt_lib::QPoint;
+        include!("cxx-qt-core-lib/qpoint.h");
+        type QPoint = cxx_qt_core_lib::QPoint;
     }
     unsafe extern "C++" {
         include ! (< QtCore / QObject >);
-        include!("cxx-qt-lib/qt.h");
+        include!("cxx-qt-core-lib/qt.h");
         #[doc(hidden)]
         #[namespace = "Qt"]
         #[rust_name = "CxxQtConnectionType"]
-        type ConnectionType = cxx_qt_lib::ConnectionType;
-        include!("cxx-qt-lib/qmetaobjectconnection.h");
+        type ConnectionType = cxx_qt_core_lib::ConnectionType;
+        include!("cxx-qt-core-lib/qmetaobjectconnection.h");
         #[doc(hidden)]
         #[namespace = "rust::cxxqtlib1"]
         #[rust_name = "CxxQtQMetaObjectConnection"]
-        type QMetaObjectConnection = cxx_qt_lib::QMetaObjectConnection;
+        type QMetaObjectConnection = cxx_qt_core_lib::QMetaObjectConnection;
     }
     unsafe extern "C++" {
         include!("cxx-qt-gen/ffi.cxxqt.h");
@@ -138,8 +138,8 @@ impl ffi::MyObject {
     pub fn on_ready(
         self: core::pin::Pin<&mut ffi::MyObject>,
         func: fn(core::pin::Pin<&mut ffi::MyObject>),
-    ) -> cxx_qt_lib::QMetaObjectConnection {
-        self.connect_ready(func, cxx_qt_lib::ConnectionType::AutoConnection)
+    ) -> cxx_qt_core_lib::QMetaObjectConnection {
+        self.connect_ready(func, cxx_qt_core_lib::ConnectionType::AutoConnection)
     }
 }
 impl ffi::MyObject {
@@ -158,8 +158,8 @@ impl ffi::MyObject {
             third: ffi::QPoint,
             fourth: &'a ffi::QPoint,
         ),
-    ) -> cxx_qt_lib::QMetaObjectConnection {
-        self.connect_data_changed(func, cxx_qt_lib::ConnectionType::AutoConnection)
+    ) -> cxx_qt_core_lib::QMetaObjectConnection {
+        self.connect_data_changed(func, cxx_qt_core_lib::ConnectionType::AutoConnection)
     }
 }
 impl ffi::MyObject {
@@ -178,8 +178,8 @@ impl ffi::MyObject {
             third: ffi::QPoint,
             fourth: &'a ffi::QPoint,
         ),
-    ) -> cxx_qt_lib::QMetaObjectConnection {
-        self.connect_base_class_new_data(func, cxx_qt_lib::ConnectionType::AutoConnection)
+    ) -> cxx_qt_core_lib::QMetaObjectConnection {
+        self.connect_base_class_new_data(func, cxx_qt_core_lib::ConnectionType::AutoConnection)
     }
 }
 impl cxx_qt::Locking for ffi::MyObject {}

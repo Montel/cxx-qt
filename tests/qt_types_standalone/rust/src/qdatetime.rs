@@ -4,20 +4,20 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::{QDate, QDateTime, QTime, QTimeZone};
+use cxx_qt_core_lib::{QDate, QDateTime, QTime, QTimeZone};
 
 #[cxx::bridge]
 mod qdatetime_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qdate.h");
-        include!("cxx-qt-lib/qdatetime.h");
-        include!("cxx-qt-lib/qtime.h");
-        include!("cxx-qt-lib/qtimezone.h");
+        include!("cxx-qt-core-lib/qdate.h");
+        include!("cxx-qt-core-lib/qdatetime.h");
+        include!("cxx-qt-core-lib/qtime.h");
+        include!("cxx-qt-core-lib/qtimezone.h");
 
-        type QDate = cxx_qt_lib::QDate;
-        type QDateTime = cxx_qt_lib::QDateTime;
-        type QTime = cxx_qt_lib::QTime;
-        type QTimeZone = cxx_qt_lib::QTimeZone;
+        type QDate = cxx_qt_core_lib::QDate;
+        type QDateTime = cxx_qt_core_lib::QDateTime;
+        type QTime = cxx_qt_core_lib::QTime;
+        type QTimeZone = cxx_qt_core_lib::QTimeZone;
     }
 
     extern "Rust" {

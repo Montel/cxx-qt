@@ -4,13 +4,13 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QDate;
+use cxx_qt_core_lib::QDate;
 
 #[cxx::bridge]
 mod qdate_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qdate.h");
-        type QDate = cxx_qt_lib::QDate;
+        include!("cxx-qt-core-lib/qdate.h");
+        type QDate = cxx_qt_core_lib::QDate;
     }
 
     extern "Rust" {

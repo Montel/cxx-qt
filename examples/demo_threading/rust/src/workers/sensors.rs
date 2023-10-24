@@ -7,7 +7,7 @@
 use crate::{constants::SENSOR_MAXIMUM_COUNT, network::NetworkChannel, qobject};
 use core::pin::Pin;
 use cxx_qt::CxxQtThread;
-use cxx_qt_lib::QString;
+use cxx_qt_core_lib::QString;
 use std::{
     collections::HashMap,
     sync::{

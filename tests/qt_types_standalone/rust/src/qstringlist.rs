@@ -3,15 +3,15 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::{CaseSensitivity, QList, QString, QStringList};
+use cxx_qt_core_lib::{CaseSensitivity, QList, QString, QStringList};
 
 #[cxx::bridge]
 mod qstringlist_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qstring.h");
-        type QString = cxx_qt_lib::QString;
-        include!("cxx-qt-lib/qstringlist.h");
-        type QStringList = cxx_qt_lib::QStringList;
+        include!("cxx-qt-core-lib/qstring.h");
+        type QString = cxx_qt_core_lib::QString;
+        include!("cxx-qt-core-lib/qstringlist.h");
+        type QStringList = cxx_qt_core_lib::QStringList;
     }
 
     extern "Rust" {

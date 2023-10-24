@@ -18,16 +18,16 @@ unsafe impl cxx::ExternType for CustomStruct {
 }
 
 // ANCHOR: book_qvariantvalue_impl
-impl cxx_qt_lib::QVariantValue for ffi::CustomStruct {
-    fn can_convert(variant: &cxx_qt_lib::QVariant) -> bool {
+impl cxx_qt_core_lib::QVariantValue for ffi::CustomStruct {
+    fn can_convert(variant: &cxx_qt_core_lib::QVariant) -> bool {
         ffi::qvariant_can_convert_custom_type(variant)
     }
 
-    fn construct(value: &Self) -> cxx_qt_lib::QVariant {
+    fn construct(value: &Self) -> cxx_qt_core_lib::QVariant {
         ffi::qvariant_construct_custom_type(value)
     }
 
-    fn value_or_default(variant: &cxx_qt_lib::QVariant) -> Self {
+    fn value_or_default(variant: &cxx_qt_core_lib::QVariant) -> Self {
         ffi::qvariant_value_or_default_custom_type(variant)
     }
 }
@@ -39,15 +39,15 @@ impl cxx_qt_lib::QVariantValue for ffi::CustomStruct {
 pub mod ffi {
     // ANCHOR_END: book_cxx_file_stem
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qpoint.h");
-        /// QPointF from cxx_qt_lib
-        type QPointF = cxx_qt_lib::QPointF;
-        include!("cxx-qt-lib/qurl.h");
-        /// QUrl from cxx_qt_lib
-        type QUrl = cxx_qt_lib::QUrl;
-        include!("cxx-qt-lib/qvariant.h");
-        /// QVariant from cxx_qt_lib
-        type QVariant = cxx_qt_lib::QVariant;
+        include!("cxx-qt-core-lib/qpoint.h");
+        /// QPointF from cxx_qt_core_lib
+        type QPointF = cxx_qt_core_lib::QPointF;
+        include!("cxx-qt-core-lib/qurl.h");
+        /// QUrl from cxx_qt_core_lib
+        type QUrl = cxx_qt_core_lib::QUrl;
+        include!("cxx-qt-core-lib/qvariant.h");
+        /// QVariant from cxx_qt_core_lib
+        type QVariant = cxx_qt_core_lib::QVariant;
     }
 
     unsafe extern "C++" {
@@ -60,10 +60,10 @@ pub mod ffi {
         fn qvariantCanConvertCustomStruct(variant: &QVariant) -> bool;
     }
 
-    // We can reuse the templates from cxx-qt-lib for the construct and value
+    // We can reuse the templates from cxx-qt-core-lib for the construct and value
     #[namespace = "rust::cxxqtlib1::qvariant"]
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qvariant.h");
+        include!("cxx-qt-core-lib/qvariant.h");
 
         /// Construct a QVariant of CustomStruct
         #[rust_name = "qvariant_construct_custom_type"]
@@ -93,7 +93,7 @@ pub mod ffi {
 }
 
 use core::pin::Pin;
-use cxx_qt_lib::{QPointF, QUrl, QVariant};
+use cxx_qt_core_lib::{QPointF, QUrl, QVariant};
 
 /// A QObject which shows custom types
 pub struct TypesRust {

@@ -4,14 +4,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QString;
+use cxx_qt_core_lib::QString;
 
 #[cxx::bridge]
 mod qstring_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qstring.h");
+        include!("cxx-qt-core-lib/qstring.h");
 
-        type QString = cxx_qt_lib::QString;
+        type QString = cxx_qt_core_lib::QString;
     }
 
     extern "Rust" {
@@ -32,12 +32,12 @@ fn construct_qstring(slice: bool) -> QString {
     }
 }
 
-fn read_qstring(s: &cxx_qt_lib::QString) -> bool {
+fn read_qstring(s: &cxx_qt_core_lib::QString) -> bool {
     let rs = s.to_string();
     rs == "String constructed by C++"
 }
 
-fn modify_qstring(mut s: core::pin::Pin<&mut cxx_qt_lib::QString>) {
+fn modify_qstring(mut s: core::pin::Pin<&mut cxx_qt_core_lib::QString>) {
     *s = QString::from("Updated string value");
 }
 

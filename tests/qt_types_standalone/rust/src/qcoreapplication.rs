@@ -3,13 +3,13 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::{QCoreApplication, QString};
+use cxx_qt_core_lib::{QCoreApplication, QString};
 
 #[cxx::bridge]
 mod qcoreapplication_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qcoreapplication.h");
-        type QCoreApplication = cxx_qt_lib::QCoreApplication;
+        include!("cxx-qt-core-lib/qcoreapplication.h");
+        type QCoreApplication = cxx_qt_core_lib::QCoreApplication;
     }
 
     extern "Rust" {

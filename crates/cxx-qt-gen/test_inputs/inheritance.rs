@@ -1,10 +1,10 @@
 #[cxx_qt::bridge]
 mod inheritance {
     extern "C++" {
-        include!("cxx-qt-lib/qmodelindex.h");
-        type QModelIndex = cxx_qt_lib::QModelIndex;
-        include!("cxx-qt-lib/qvariant.h");
-        type QVariant = cxx_qt_lib::QVariant;
+        include!("cxx-qt-core-lib/qmodelindex.h");
+        type QModelIndex = cxx_qt_core_lib::QModelIndex;
+        include!("cxx-qt-core-lib/qvariant.h");
+        type QVariant = cxx_qt_core_lib::QVariant;
     }
 
     extern "RustQt" {

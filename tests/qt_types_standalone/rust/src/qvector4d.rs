@@ -3,13 +3,13 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QVector4D;
+use cxx_qt_core_lib::QVector4D;
 
 #[cxx::bridge]
 mod qvector4d_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qvector4d.h");
-        type QVector4D = cxx_qt_lib::QVector4D;
+        include!("cxx-qt-core-lib/qvector4d.h");
+        type QVector4D = cxx_qt_core_lib::QVector4D;
     }
 
     extern "Rust" {

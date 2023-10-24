@@ -4,16 +4,16 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::{QString, QUrl};
+use cxx_qt_core_lib::{QString, QUrl};
 
 #[cxx::bridge]
 mod qurl_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qstring.h");
-        include!("cxx-qt-lib/qurl.h");
+        include!("cxx-qt-core-lib/qstring.h");
+        include!("cxx-qt-core-lib/qurl.h");
 
-        type QString = cxx_qt_lib::QString;
-        type QUrl = cxx_qt_lib::QUrl;
+        type QString = cxx_qt_core_lib::QString;
+        type QUrl = cxx_qt_core_lib::QUrl;
     }
 
     extern "Rust" {

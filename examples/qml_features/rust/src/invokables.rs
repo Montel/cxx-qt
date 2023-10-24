@@ -10,9 +10,9 @@
 #[cxx_qt::bridge(cxx_file_stem = "rust_invokables")]
 pub mod qobject {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qcolor.h");
-        /// QColor from cxx_qt_lib
-        type QColor = cxx_qt_lib::QColor;
+        include!("cxx-qt-core-lib/qcolor.h");
+        /// QColor from cxx_qt_core_lib
+        type QColor = cxx_qt_core_lib::QColor;
     }
 
     unsafe extern "RustQt" {
@@ -62,7 +62,7 @@ pub mod qobject {
 
 use core::pin::Pin;
 use cxx_qt::CxxQtType;
-use cxx_qt_lib::QColor;
+use cxx_qt_core_lib::QColor;
 
 /// A QObject which has Q_INVOKABLEs
 pub struct RustInvokablesRust {

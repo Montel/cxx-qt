@@ -14,7 +14,8 @@
 // ANCHOR: book_cargo_imports
 pub mod cxxqt_object;
 
-use cxx_qt_lib::{QGuiApplication, QQmlApplicationEngine, QUrl};
+use cxx_qt_core_lib::{QGuiApplication, QUrl};
+use cxx_qt_qml_lib::{QQmlApplicationEngine};
 // ANCHOR_END: book_cargo_imports
 
 // ANCHOR: book_cargo_rust_main

@@ -2,8 +2,8 @@
 mod ffi {
     #[namespace = ""]
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qpoint.h");
-        type QPoint = cxx_qt_lib::QPoint;
+        include!("cxx-qt-core-lib/qpoint.h");
+        type QPoint = cxx_qt_core_lib::QPoint;
     }
 
     unsafe extern "RustQt" {
