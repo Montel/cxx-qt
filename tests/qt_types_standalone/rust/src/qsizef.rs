@@ -4,14 +4,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QSizeF;
+use cxx_qt_core_lib::QSizeF;
 
 #[cxx::bridge]
 mod qsizef_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qsizef.h");
+        include!("cxx-qt-core-lib/qsizef.h");
 
-        type QSizeF = cxx_qt_lib::QSizeF;
+        type QSizeF = cxx_qt_core_lib::QSizeF;
     }
 
     extern "Rust" {

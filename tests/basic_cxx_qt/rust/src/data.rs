@@ -26,8 +26,8 @@ impl From<&MyDataRust> for DataSerde {
 mod qobject {
     #[namespace = ""]
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qstring.h");
-        type QString = cxx_qt_lib::QString;
+        include!("cxx-qt-core-lib/qstring.h");
+        type QString = cxx_qt_core_lib::QString;
     }
 
     unsafe extern "RustQt" {
@@ -44,7 +44,7 @@ mod qobject {
 
 use core::pin::Pin;
 use cxx_qt::CxxQtType;
-use cxx_qt_lib::QString;
+use cxx_qt_core_lib::QString;
 
 pub struct MyDataRust {
     pub number: i32,

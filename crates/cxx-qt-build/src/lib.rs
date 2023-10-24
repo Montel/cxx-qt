@@ -9,7 +9,7 @@
 
 //! This crate provides a builder which parses given Rust source code to search
 //! for CXX-Qt or CXX macros and generate any resulting C++ code. It also builds
-//! the C++ code into a binary with any cxx-qt-lib code and Qt linked.
+//! the C++ code into a binary with any cxx-qt-core-lib code and Qt linked.
 
 mod diagnostics;
 use diagnostics::{Diagnostic, GeneratedError};
@@ -455,9 +455,9 @@ impl CxxQtBuilder {
             .expect("Could not find Qt installation");
         qtbuild.cargo_link_libraries(&mut self.cc_builder);
 
-        // Write cxx-qt-gen, cxx-qt-lib and cxx headers
+        // Write cxx-qt-gen, cxx-qt-core-lib and cxx headers
         cxx_qt_gen::write_headers(format!("{header_root}/cxx-qt-common"));
-        cxx_qt_lib_headers::write_headers(format!("{header_root}/cxx-qt-lib"));
+        cxx_qt_core_lib_headers::write_headers(format!("{header_root}/cxx-qt-core-lib"));
         std::fs::create_dir_all(format!("{header_root}/rust"))
             .expect("Could not create cxx header directory");
         let h_path = format!("{header_root}/rust/cxx.h");
@@ -499,7 +499,7 @@ impl CxxQtBuilder {
         }
 
         for builder in [&mut self.cc_builder, &mut cc_builder_whole_archive] {
-            // Note, ensure our settings stay in sync across cxx-qt-build and cxx-qt-lib
+            // Note, ensure our settings stay in sync across cxx-qt-build and cxx-qt-core-lib
             builder.cpp(true);
             // MSVC
             builder.flag_if_supported("/std:c++17");

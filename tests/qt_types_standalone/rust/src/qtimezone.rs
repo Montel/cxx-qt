@@ -3,13 +3,13 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::{QByteArray, QTimeZone};
+use cxx_qt_core_lib::{QByteArray, QTimeZone};
 
 #[cxx::bridge]
 mod qtimezone_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qtimezone.h");
-        type QTimeZone = cxx_qt_lib::QTimeZone;
+        include!("cxx-qt-core-lib/qtimezone.h");
+        type QTimeZone = cxx_qt_core_lib::QTimeZone;
     }
 
     extern "Rust" {

@@ -3,13 +3,13 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QMargins;
+use cxx_qt_core_lib::QMargins;
 
 #[cxx::bridge]
 mod qmargins_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qmargins.h");
-        type QMargins = cxx_qt_lib::QMargins;
+        include!("cxx-qt-core-lib/qmargins.h");
+        type QMargins = cxx_qt_core_lib::QMargins;
     }
 
     extern "Rust" {

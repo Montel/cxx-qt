@@ -9,15 +9,15 @@ SPDX-License-Identifier: MIT OR Apache-2.0
 
 CXX-Qt supports most types supported by CXX. These can be used in properties, invokables, and signals.
 
-## `cxx-qt-lib` Types
+## `cxx-qt-core-lib` Types
 
-The `cxx-qt-lib` crate provides CXX bindings for common Qt types.
+The `cxx-qt-core-lib` crate provides CXX bindings for common Qt types.
 
-Use the [`cxx-qt-lib` Docs](https://docs.rs/cxx-qt-lib/latest/cxx_qt_lib/) to explore the available types.
+Use the [`cxx-qt-core-lib` Docs](https://docs.rs/cxx-qt-core-lib/latest/cxx_qt_core_lib/) to explore the available types.
 
 ### Container Types
 
-The `cxx-qt-lib` crate has containers types, such as `QSet<T>`.
+The `cxx-qt-core-lib` crate has containers types, such as `QSet<T>`.
 
 To use these define a templated type in the CXX bridge, but note that the type
 name must be `QSet_T` as this needs to match the name in C++ code.
@@ -50,7 +50,7 @@ Any types that are valid CXX types should be usable with CXX-Qt as well.
 Note that the same rules apply as CXX, so a type must be [trivial](https://cxx.rs/extern-c++.html?highlight=trivial#integrating-with-bindgen-generated-or-handwritten-unsafe-bindings) to pass by value.
 If they are opaque, references or pointers must be used.
 
-For examples of how to wrap Qt objects, explore the [`cxx-qt-lib` source code](https://github.com/KDAB/cxx-qt/tree/main/crates/cxx-qt-lib).
+For examples of how to wrap Qt objects, explore the [`cxx-qt-core-lib` source code](https://github.com/KDAB/cxx-qt/tree/main/crates/cxx-qt-core-lib).
 
 ### Using a Custom Type with Containers or QVariant
 

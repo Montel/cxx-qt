@@ -23,4 +23,4 @@ cxx-qt-macro.workspace = true
 
 [dev-dependencies]
 cxx.workspace = true
-cxx-qt-lib.workspace = true
+cxx-qt-core-lib.workspace = true

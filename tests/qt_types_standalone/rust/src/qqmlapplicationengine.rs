@@ -3,13 +3,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::{QQmlApplicationEngine, QUrl};
+use cxx_qt_core_lib::{QUrl};
+use cxx_qt_qml_lib::{QQmlApplicationEngine}
 
 #[cxx::bridge]
 mod qqmlapplicationengine_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qqmlapplicationengine.h");
-        type QQmlApplicationEngine = cxx_qt_lib::QQmlApplicationEngine;
+        include!("cxx-qt-qml-lib/qqmlapplicationengine.h");
+        type QQmlApplicationEngine = cxx_qt_qml_lib::QQmlApplicationEngine;
     }
 
     extern "Rust" {

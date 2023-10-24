@@ -9,27 +9,27 @@
 #[cxx_qt::bridge(cxx_file_stem = "rust_containers")]
 pub mod qobject {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qhash.h");
-        /// QHash<QString, QVariant> from cxx_qt_lib
-        type QHash_QString_QVariant = cxx_qt_lib::QHash<cxx_qt_lib::QHashPair_QString_QVariant>;
-        include!("cxx-qt-lib/qlist.h");
-        /// QList<i32> from cxx_qt_lib
-        type QList_i32 = cxx_qt_lib::QList<i32>;
-        include!("cxx-qt-lib/qmap.h");
-        /// QMap<QString, QVariant> from cxx_qt_lib
-        type QMap_QString_QVariant = cxx_qt_lib::QMap<cxx_qt_lib::QMapPair_QString_QVariant>;
-        include!("cxx-qt-lib/qset.h");
-        /// QSet<i32> from cxx_qt_lib
-        type QSet_i32 = cxx_qt_lib::QSet<i32>;
-        include!("cxx-qt-lib/qstring.h");
-        /// QString from cxx_qt_lib
-        type QString = cxx_qt_lib::QString;
-        include!("cxx-qt-lib/qvariant.h");
-        /// QVariant from cxx_qt_lib
-        type QVariant = cxx_qt_lib::QVariant;
-        include!("cxx-qt-lib/qvector.h");
-        /// QVector<i32> from cxx_qt_lib
-        type QVector_i32 = cxx_qt_lib::QVector<i32>;
+        include!("cxx-qt-core-lib/qhash.h");
+        /// QHash<QString, QVariant> from cxx_qt_core_lib
+        type QHash_QString_QVariant = cxx_qt_core_lib::QHash<cxx_qt_core_lib::QHashPair_QString_QVariant>;
+        include!("cxx-qt-core-lib/qlist.h");
+        /// QList<i32> from cxx_qt_core_lib
+        type QList_i32 = cxx_qt_core_lib::QList<i32>;
+        include!("cxx-qt-core-lib/qmap.h");
+        /// QMap<QString, QVariant> from cxx_qt_core_lib
+        type QMap_QString_QVariant = cxx_qt_core_lib::QMap<cxx_qt_core_lib::QMapPair_QString_QVariant>;
+        include!("cxx-qt-core-lib/qset.h");
+        /// QSet<i32> from cxx_qt_core_lib
+        type QSet_i32 = cxx_qt_core_lib::QSet<i32>;
+        include!("cxx-qt-core-lib/qstring.h");
+        /// QString from cxx_qt_core_lib
+        type QString = cxx_qt_core_lib::QString;
+        include!("cxx-qt-core-lib/qvariant.h");
+        /// QVariant from cxx_qt_core_lib
+        type QVariant = cxx_qt_core_lib::QVariant;
+        include!("cxx-qt-core-lib/qvector.h");
+        /// QVector<i32> from cxx_qt_core_lib
+        type QVector_i32 = cxx_qt_core_lib::QVector<i32>;
     }
 
     unsafe extern "RustQt" {
@@ -72,7 +72,7 @@ pub mod qobject {
 
 use core::pin::Pin;
 use cxx_qt::CxxQtType;
-use cxx_qt_lib::{
+use cxx_qt_core_lib::{
     QHash, QHashPair_QString_QVariant, QList, QMap, QMapPair_QString_QVariant, QSet, QString,
     QVariant, QVector,
 };

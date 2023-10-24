@@ -3,14 +3,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::{QHash, QHashPair_QString_QVariant, QString, QVariant};
+use cxx_qt_core_lib::{QHash, QHashPair_QString_QVariant, QString, QVariant};
 
 #[cxx::bridge]
 mod qhash_cxx {
     // ANCHOR: book_qhash
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qhash.h");
-        type QHash_QString_QVariant = cxx_qt_lib::QHash<cxx_qt_lib::QHashPair_QString_QVariant>;
+        include!("cxx-qt-core-lib/qhash.h");
+        type QHash_QString_QVariant = cxx_qt_core_lib::QHash<cxx_qt_core_lib::QHashPair_QString_QVariant>;
     }
     // ANCHOR_END: book_qhash
 

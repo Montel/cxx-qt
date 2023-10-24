@@ -8,8 +8,10 @@ members = [
     "crates/cxx-qt",
     "crates/cxx-qt-build",
     "crates/cxx-qt-gen",
-    "crates/cxx-qt-lib",
-    "crates/cxx-qt-lib-headers",
+    "crates/cxx-qt-core-lib",
+    "crates/cxx-qt-core-lib-headers",
+    "crates/cxx-qt-qml-lib",
+    "crates/cxx-qt-qml-lib-headers",
     "crates/qt-build-utils",
 
     "examples/cargo_without_cmake",
@@ -36,8 +38,11 @@ cxx-qt = { path = "crates/cxx-qt" }
 cxx-qt-macro = { path = "crates/cxx-qt-macro" }
 cxx-qt-build = { path = "crates/cxx-qt-build" }
 cxx-qt-gen = { path = "crates/cxx-qt-gen", version = "0.5.3" }
-cxx-qt-lib = { path = "crates/cxx-qt-lib" }
-cxx-qt-lib-headers = { path = "crates/cxx-qt-lib-headers", version = "0.5.3" }
+cxx-qt-core-lib = { path = "crates/cxx-qt-core-lib" }
+cxx-qt-core-lib-headers = { path = "crates/cxx-qt-core-lib-headers", version = "0.5.3" }
+cxx-qt-qml-lib = { path = "crates/cxx-qt-qml-lib" }
+cxx-qt-qml-lib-headers = { path = "crates/cxx-qt-qml-lib-headers", version = "0.5.3" }
+
 qt-build-utils = { path = "crates/qt-build-utils", version = "0.5.3" }
 
 cc = { version = "1.0.79", features = ["parallel"] }

@@ -4,14 +4,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QPoint;
+use cxx_qt_core_lib::QPoint;
 
 #[cxx::bridge]
 mod qpoint_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qpoint.h");
+        include!("cxx-qt-core-lib/qpoint.h");
 
-        type QPoint = cxx_qt_lib::QPoint;
+        type QPoint = cxx_qt_core_lib::QPoint;
     }
 
     extern "Rust" {

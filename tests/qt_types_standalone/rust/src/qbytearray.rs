@@ -4,14 +4,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QByteArray;
+use cxx_qt_core_lib::QByteArray;
 
 #[cxx::bridge]
 mod qbytearray_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qbytearray.h");
+        include!("cxx-qt-core-lib/qbytearray.h");
 
-        type QByteArray = cxx_qt_lib::QByteArray;
+        type QByteArray = cxx_qt_core_lib::QByteArray;
     }
 
     extern "Rust" {
@@ -33,12 +33,12 @@ fn construct_qbytearray(slice: bool) -> QByteArray {
     }
 }
 
-fn read_qbytearray(s: &cxx_qt_lib::QByteArray) -> bool {
+fn read_qbytearray(s: &cxx_qt_core_lib::QByteArray) -> bool {
     let rs = s.to_string();
     rs == "String constructed by C++"
 }
 
-fn modify_qbytearray(mut s: core::pin::Pin<&mut cxx_qt_lib::QByteArray>) {
+fn modify_qbytearray(mut s: core::pin::Pin<&mut cxx_qt_core_lib::QByteArray>) {
     *s = QByteArray::from("Updated string value");
 }
 

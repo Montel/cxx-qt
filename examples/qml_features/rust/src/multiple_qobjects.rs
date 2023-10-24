@@ -9,12 +9,12 @@
 #[cxx_qt::bridge(cxx_file_stem = "multiple_qobjects")]
 pub mod qobject {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qcolor.h");
-        /// QColor from cxx_qt_lib
-        type QColor = cxx_qt_lib::QColor;
-        include!("cxx-qt-lib/qurl.h");
-        /// QUrl from cxx_qt_lib
-        type QUrl = cxx_qt_lib::QUrl;
+        include!("cxx-qt-core-lib/qcolor.h");
+        /// QColor from cxx_qt_core_lib
+        type QColor = cxx_qt_core_lib::QColor;
+        include!("cxx-qt-core-lib/qurl.h");
+        /// QUrl from cxx_qt_core_lib
+        type QUrl = cxx_qt_core_lib::QUrl;
     }
 
     extern "RustQt" {
@@ -73,7 +73,7 @@ pub mod qobject {
 }
 
 use core::pin::Pin;
-use cxx_qt_lib::{QColor, QUrl};
+use cxx_qt_core_lib::{QColor, QUrl};
 
 /// The first QObject
 pub struct FirstObjectRust {

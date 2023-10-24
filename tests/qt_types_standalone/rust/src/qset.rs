@@ -3,14 +3,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QSet;
+use cxx_qt_core_lib::QSet;
 
 #[cxx::bridge]
 mod qset_cxx {
     // ANCHOR: book_qset
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qset.h");
-        type QSet_i32 = cxx_qt_lib::QSet<i32>;
+        include!("cxx-qt-core-lib/qset.h");
+        type QSet_i32 = cxx_qt_core_lib::QSet<i32>;
     }
     // ANCHOR_END: book_qset
 

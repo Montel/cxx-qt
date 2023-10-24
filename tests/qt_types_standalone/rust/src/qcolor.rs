@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QColor;
+use cxx_qt_core_lib::QColor;
 
 #[cxx::bridge]
 mod qcolor_cxx {
@@ -16,8 +16,8 @@ mod qcolor_cxx {
     }
 
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qcolor.h");
-        type QColor = cxx_qt_lib::QColor;
+        include!("cxx-qt-core-lib/qcolor.h");
+        type QColor = cxx_qt_core_lib::QColor;
     }
 
     extern "Rust" {

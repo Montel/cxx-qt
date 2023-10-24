@@ -9,17 +9,17 @@
 #[cxx_qt::bridge(cxx_file_stem = "custom_parent_class")]
 pub mod qobject {
     unsafe extern "C++" {
-        /// QColor from cxx_qt_lib
-        type QColor = cxx_qt_lib::QColor;
-        include!("cxx-qt-lib/qcolor.h");
+        /// QColor from cxx_qt_core_lib
+        type QColor = cxx_qt_core_lib::QColor;
+        include!("cxx-qt-core-lib/qcolor.h");
 
-        /// QRectF from cxx_qt_lib
-        type QRectF = cxx_qt_lib::QRectF;
-        include!("cxx-qt-lib/qrectf.h");
+        /// QRectF from cxx_qt_core_lib
+        type QRectF = cxx_qt_core_lib::QRectF;
+        include!("cxx-qt-core-lib/qrectf.h");
 
-        /// QSizeF from cxx_qt_lib
-        type QSizeF = cxx_qt_lib::QSizeF;
-        include!("cxx-qt-lib/qsizef.h");
+        /// QSizeF from cxx_qt_core_lib
+        type QSizeF = cxx_qt_core_lib::QSizeF;
+        include!("cxx-qt-core-lib/qsizef.h");
     }
 
     // Define the API from QPainter that we need
@@ -66,7 +66,7 @@ pub mod qobject {
 }
 
 use core::pin::Pin;
-use cxx_qt_lib::{QColor, QRectF};
+use cxx_qt_core_lib::{QColor, QRectF};
 
 /// A struct which inherits from QQuickPaintedItem
 ///

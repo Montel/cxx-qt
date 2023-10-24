@@ -45,7 +45,7 @@ pub fn generate(
                     // Specialised version of CxxQtThread, which can be moved into other threads.
                     //
                     // CXX doesn't support having generic types in the function yet
-                    // so we cannot have CxxQtThread<T> in cxx-qt-lib and then use that here
+                    // so we cannot have CxxQtThread<T> in cxx-qt-core-lib and then use that here
                     // For now we use a type alias in C++ then use it like a normal type here
                     // <https://github.com/dtolnay/cxx/issues/683>
                     #[doc(hidden)]

@@ -13,12 +13,12 @@ pub mod qobject {
     // ANCHOR_END: book_namespace_macro
     #[namespace = ""]
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qstring.h");
-        /// QString from cxx_qt_lib
-        type QString = cxx_qt_lib::QString;
-        include!("cxx-qt-lib/qurl.h");
-        /// QUrl from cxx_qt_lib
-        type QUrl = cxx_qt_lib::QUrl;
+        include!("cxx-qt-core-lib/qstring.h");
+        /// QString from cxx_qt_core_lib
+        type QString = cxx_qt_core_lib::QString;
+        include!("cxx-qt-core-lib/qurl.h");
+        /// QUrl from cxx_qt_core_lib
+        type QUrl = cxx_qt_core_lib::QUrl;
     }
 
     extern "RustQt" {
@@ -47,7 +47,7 @@ pub mod qobject {
 
 use core::pin::Pin;
 use cxx_qt::{CxxQtType, Threading};
-use cxx_qt_lib::{QString, QUrl};
+use cxx_qt_core_lib::{QString, QUrl};
 
 /// A QObject which has threading
 pub struct ThreadingWebsiteRust {

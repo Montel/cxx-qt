@@ -14,21 +14,21 @@ pub mod qobject {
         include!(< QAbstractListModel >);
         // ANCHOR_END: book_base_include
 
-        include!("cxx-qt-lib/qhash.h");
-        /// QHash<i32, QByteArray> from cxx_qt_lib
-        type QHash_i32_QByteArray = cxx_qt_lib::QHash<cxx_qt_lib::QHashPair_i32_QByteArray>;
+        include!("cxx-qt-core-lib/qhash.h");
+        /// QHash<i32, QByteArray> from cxx_qt_core_lib
+        type QHash_i32_QByteArray = cxx_qt_core_lib::QHash<cxx_qt_core_lib::QHashPair_i32_QByteArray>;
 
-        include!("cxx-qt-lib/qvariant.h");
-        /// QVariant from cxx_qt_lib
-        type QVariant = cxx_qt_lib::QVariant;
+        include!("cxx-qt-core-lib/qvariant.h");
+        /// QVariant from cxx_qt_core_lib
+        type QVariant = cxx_qt_core_lib::QVariant;
 
-        include!("cxx-qt-lib/qmodelindex.h");
-        /// QModelIndex from cxx_qt_lib
-        type QModelIndex = cxx_qt_lib::QModelIndex;
+        include!("cxx-qt-core-lib/qmodelindex.h");
+        /// QModelIndex from cxx_qt_core_lib
+        type QModelIndex = cxx_qt_core_lib::QModelIndex;
 
-        include!("cxx-qt-lib/qvector.h");
-        /// QVector<i32> from cxx_qt_lib
-        type QVector_i32 = cxx_qt_lib::QVector<i32>;
+        include!("cxx-qt-core-lib/qvector.h");
+        /// QVector<i32> from cxx_qt_core_lib
+        type QVector_i32 = cxx_qt_core_lib::QVector<i32>;
     }
 
     #[qenum(CustomBaseClass)]
@@ -200,7 +200,7 @@ pub mod qobject {
 
 use core::pin::Pin;
 use cxx_qt::{CxxQtType, Threading};
-use cxx_qt_lib::{QByteArray, QHash, QHashPair_i32_QByteArray, QModelIndex, QVariant, QVector};
+use cxx_qt_core_lib::{QByteArray, QHash, QHashPair_i32_QByteArray, QModelIndex, QVariant, QVector};
 
 impl Default for qobject::State {
     fn default() -> Self {

@@ -4,14 +4,14 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QRectF;
+use cxx_qt_core_lib::QRectF;
 
 #[cxx::bridge]
 mod qrectf_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qrectf.h");
+        include!("cxx-qt-core-lib/qrectf.h");
 
-        type QRectF = cxx_qt_lib::QRectF;
+        type QRectF = cxx_qt_core_lib::QRectF;
     }
 
     extern "Rust" {

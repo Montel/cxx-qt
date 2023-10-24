@@ -3,13 +3,13 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QModelIndex;
+use cxx_qt_core_lib::QModelIndex;
 
 #[cxx::bridge]
 mod qmodelindex_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qmodelindex.h");
-        type QModelIndex = cxx_qt_lib::QModelIndex;
+        include!("cxx-qt-core-lib/qmodelindex.h");
+        type QModelIndex = cxx_qt_core_lib::QModelIndex;
     }
 
     extern "Rust" {

@@ -30,9 +30,9 @@ impl From<&SerialisationRust> for DataSerde {
 #[cxx_qt::bridge(cxx_file_stem = "serialisation")]
 pub mod qobject {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qstring.h");
-        /// QString from cxx_qt_lib
-        type QString = cxx_qt_lib::QString;
+        include!("cxx-qt-core-lib/qstring.h");
+        /// QString from cxx_qt_core_lib
+        type QString = cxx_qt_core_lib::QString;
     }
 
     unsafe extern "RustQt" {
@@ -60,7 +60,7 @@ pub mod qobject {
 
 use core::pin::Pin;
 use cxx_qt::CxxQtType;
-use cxx_qt_lib::QString;
+use cxx_qt_core_lib::QString;
 
 /// A QObject which can be serialised
 pub struct SerialisationRust {

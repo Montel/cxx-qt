@@ -13,8 +13,8 @@ mod workers;
 pub mod qobject {
     #[namespace = ""]
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qstring.h");
-        type QString = cxx_qt_lib::QString;
+        include!("cxx-qt-core-lib/qstring.h");
+        type QString = cxx_qt_core_lib::QString;
     }
 
     extern "RustQt" {
@@ -58,7 +58,7 @@ use crate::{
 
 use core::pin::Pin;
 use cxx_qt::{CxxQtType, Threading};
-use cxx_qt_lib::QString;
+use cxx_qt_core_lib::QString;
 use futures::executor::block_on;
 use std::{
     sync::{atomic::AtomicBool, mpsc::sync_channel, Arc, Mutex},

@@ -22,8 +22,10 @@ license = "MIT OR Apache-2.0"
 cxx.workspace = true
 # Use `cxx-qt = "0.5"` here instead!
 cxx-qt.workspace = true
-# Use `cxx-qt-lib = "0.5"` here instead!
-cxx-qt-lib.workspace = true
+# Use `cxx-qt-core-lib = "0.5"` here instead!
+cxx-qt-core-lib.workspace = true
+# Use `cxx-qt-qml-lib = "0.5"` here instead!
+cxx-qt-qml-lib.workspace = true
 
 [build-dependencies]
 # Use `cxx-qt-build = "0.5"` here instead!

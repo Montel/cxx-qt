@@ -3,13 +3,13 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::QList;
+use cxx_qt_core_lib::QList;
 
 #[cxx::bridge]
 mod qlist_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qlist.h");
-        type QList_i32 = cxx_qt_lib::QList<i32>;
+        include!("cxx-qt-core-lib/qlist.h");
+        type QList_i32 = cxx_qt_core_lib::QList<i32>;
     }
 
     extern "Rust" {

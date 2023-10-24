@@ -1,23 +1,23 @@
 #[cxx::bridge(namespace = "")]
 mod inheritance {
     extern "C++" {
-        include!("cxx-qt-lib/qmodelindex.h");
-        type QModelIndex = cxx_qt_lib::QModelIndex;
-        include!("cxx-qt-lib/qvariant.h");
-        type QVariant = cxx_qt_lib::QVariant;
+        include!("cxx-qt-core-lib/qmodelindex.h");
+        type QModelIndex = cxx_qt_core_lib::QModelIndex;
+        include!("cxx-qt-core-lib/qvariant.h");
+        type QVariant = cxx_qt_core_lib::QVariant;
     }
     unsafe extern "C++" {
         include ! (< QtCore / QObject >);
-        include!("cxx-qt-lib/qt.h");
+        include!("cxx-qt-core-lib/qt.h");
         #[doc(hidden)]
         #[namespace = "Qt"]
         #[rust_name = "CxxQtConnectionType"]
-        type ConnectionType = cxx_qt_lib::ConnectionType;
-        include!("cxx-qt-lib/qmetaobjectconnection.h");
+        type ConnectionType = cxx_qt_core_lib::ConnectionType;
+        include!("cxx-qt-core-lib/qmetaobjectconnection.h");
         #[doc(hidden)]
         #[namespace = "rust::cxxqtlib1"]
         #[rust_name = "CxxQtQMetaObjectConnection"]
-        type QMetaObjectConnection = cxx_qt_lib::QMetaObjectConnection;
+        type QMetaObjectConnection = cxx_qt_core_lib::QMetaObjectConnection;
     }
     unsafe extern "C++" {
         include!("cxx-qt-gen/inheritance.cxxqt.h");

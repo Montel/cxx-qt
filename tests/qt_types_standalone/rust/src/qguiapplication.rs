@@ -3,13 +3,13 @@
 //
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
-use cxx_qt_lib::{QGuiApplication, QString};
+use cxx_qt_core_lib::{QGuiApplication, QString};
 
 #[cxx::bridge]
 mod qguiapplication_cxx {
     unsafe extern "C++" {
-        include!("cxx-qt-lib/qguiapplication.h");
-        type QGuiApplication = cxx_qt_lib::QGuiApplication;
+        include!("cxx-qt-core-lib/qguiapplication.h");
+        type QGuiApplication = cxx_qt_core_lib::QGuiApplication;
     }
 
     extern "Rust" {
