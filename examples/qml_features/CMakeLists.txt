@@ -18,7 +18,6 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 endif()
 
 set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -89,9 +88,13 @@ add_test(
     COMMAND ${TEST_CMD}
 )
 
-add_valgrind_test(
-    ${APP_TEST_NAME} "${TEST_CMD}" ${CMAKE_CURRENT_BINARY_DIR}
-)
+if (COMMAND add_valgrind_test)
+    add_valgrind_test(
+      ${APP_TEST_NAME} "${TEST_CMD}" ${CMAKE_CURRENT_BINARY_DIR}
+    )
+else()
+    MESSAGE(STATUS "add_valgrind_test is define in top level of cxx-qt. It will not executed")
+endif()
 
 # RUNTIME_ENV comes from the CMakeLists.txt at the root of this repository.
 set_tests_properties(
