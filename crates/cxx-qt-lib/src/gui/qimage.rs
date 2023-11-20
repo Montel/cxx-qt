@@ -11,12 +11,56 @@ mod ffi {
     unsafe extern "C++" {
         include!("cxx-qt-lib/qimage.h");
         type QImage = super::QImage;
+        include!("cxx-qt-lib/qsize.h");
+        type QSize = crate::QSize;
+        include!("cxx-qt-lib/qrect.h");
+        type QRect = crate::QRect;
+        include!("cxx-qt-lib/qcolor.h");
+        type QColor = crate::QColor;
+
 
         /// Whether the QImage is null.
         ///
         /// This means that the QImage has all parameters set to zero and no allocated data.
         #[rust_name = "is_null"]
         fn isNull(self: &QImage) -> bool;
+
+        /// Returns true if all the colors in the image are shades of gray
+        #[rust_name = "all_gray"]
+        fn allGray(self: &QImage) -> bool;
+
+        /// For 32-bit images, this function is equivalent to allGray().
+        /// For color indexed images, this function returns true if color(i) is QRgb(i, i, i) 
+        /// for all indexes of the color table; otherwise returns false.
+        #[rust_name = "is_gray_scale"]
+        fn isGrayscale(self: &QImage) -> bool;
+
+        /// Returns true if the image has a format that respects the alpha channel, otherwise returns false.
+        #[rust_name = "has_alpha_channel"]
+        fn hasAlphaChannel(self: &QImage) -> bool;
+
+        /// Returns the size of the color table for the image.
+        #[rust_name = "color_count"]
+        fn colorCount(self: &QImage) -> i32;
+
+        /// Returns the depth of the image.
+        fn depth(self: &QImage) -> i32;
+
+        /// Returns the height of the image.
+        fn height(self: &QImage) -> i32;
+
+        /// Returns the width of the image.
+        fn width(self: &QImage) -> i32;
+
+        /// Returns the size of the image.
+        fn size(self: &QImage) -> QSize;
+
+        /// Returns the enclosing rectangle (0, 0, width(), height()) of the image.
+        fn rect(self: &QImage) -> QRect;
+
+        /// Returns the color of the pixel at coordinates (x, y) as a QColor.
+        #[rust_name = "pixel_color"]        
+        fn pixelColor(self: &QImage, x: i32, y: i32) -> QColor;
     }
 
     #[namespace = "rust::cxxqtlib1"]
