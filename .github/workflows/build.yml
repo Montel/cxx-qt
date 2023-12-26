@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2023 Klarälvdalens Datakonsult AB, a KDAB Group company <info@kdab.com>
+#
+# SPDX-License-Identifier: MIT
+
+name: Build cxx-qt on CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# Cancel any previous runs for the same pull request
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:     
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix: 
+        os:
+          - ubuntu-22.04
+          - windows-2022
+          - macos-12
+    steps:
+      - name: "test1"
+        run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
