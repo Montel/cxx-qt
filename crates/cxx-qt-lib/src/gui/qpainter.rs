@@ -32,6 +32,10 @@ mod ffi {
         type QString = crate::QString;
         include!("cxx-qt-lib/qpainterpath.h");
         type QPainterPath = crate::QPainterPath;
+        include!("cxx-qt-lib/qfont.h");
+        type QFont = crate::QFont;
+        include!("cxx-qt-lib/qpen.h");
+        type QPen = crate::QPen;
 
         /// Returns the current background mode.
         #[rust_name = "background_mode"]
@@ -108,6 +112,9 @@ mod ffi {
         #[rust_name = "fill_rect"]
         fn fillRect(self: Pin<&mut QPainter>, rectangle: &QRectF, color: &QColor);
 
+        /// Returns the currently set font used for drawing text.
+        fn font(self: &QPainter) -> &QFont;
+
         /// Returns true if clipping has been set; otherwise returns false.
         #[rust_name = "has_clipping"]
         fn hasClipping(self: &QPainter) -> bool;
@@ -122,6 +129,9 @@ mod ffi {
 
         /// Returns the opacity of the painter. The default value is 1.
         fn opacity(self: &QPainter) -> f64;
+
+        /// Returns the painter's current pen.
+        fn pen(self: &QPainter) -> &QPen;
 
         /// Saves the current painter state (pushes the state onto a stack).
         /// A save() must be followed by a corresponding restore(); the end() function unwinds the stack.
@@ -145,13 +155,17 @@ mod ffi {
         #[rust_name = "set_clip_rect"]
         fn setClipRect(self: Pin<&mut QPainter>, rectangle: &QRect, operation: ClipOperation);
 
+        /// Sets the painter's font to the given font.
+        #[rust_name = "set_font"]
+        fn setFont(self: Pin<&mut QPainter>, font: &QFont);
+
         /// Sets the layout direction used by the painter when drawing text, to the specified direction.
         #[rust_name = "set_layout_direction"]
         fn setLayoutDirection(self: Pin<&mut QPainter>, direction: LayoutDirection);
 
-        /// Sets the painter's pen to have style Qt::SolidLine, width 1 and the specified color.
+        /// Sets the painter's pen to be the given pen.
         #[rust_name = "set_pen"]
-        fn setPen(self: Pin<&mut QPainter>, color: &QColor);
+        fn setPen(self: Pin<&mut QPainter>, pen: &QPen);
 
         /// Sets the opacity of the painter to opacity. The value should be in the range 0.0 to 1.0,
         /// where 0.0 is fully transparent and 1.0 is fully opaque.
@@ -165,6 +179,10 @@ mod ffi {
         /// Sets the painter's window to the given rectangle, and enables view transformations.
         #[rust_name = "set_window"]
         fn setWindow(self: Pin<&mut QPainter>, rectangle: &QRect);
+
+        /// Draws the outline (strokes) the path path with the pen specified by pen
+        #[rust_name = "stroke_path"]
+        fn strokePath(self: Pin<&mut QPainter>, path: &QPainterPath, pen: &QPen);
 
         /// Restores the current painter state (pops a saved state off the stack).
         fn restore(self: Pin<&mut QPainter>);
