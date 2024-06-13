@@ -20,3 +20,5 @@ MyObject::MyObject(QObject* parent)
   , ::rust::cxxqt1::CxxQtLocking()
 {
 }
+
+#include "moc_inheritance.cpp"

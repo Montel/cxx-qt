@@ -475,3 +475,5 @@ SecondObject::SecondObject(QObject* parent)
 }
 
 } // namespace second_object
+
+#include "moc_passthrough_and_naming.cpp"
