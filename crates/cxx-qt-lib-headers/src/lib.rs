@@ -17,6 +17,10 @@ pub fn build_opts() -> cxx_qt_build::CxxQtBuildersOpts {
     for (file_contents, file_name) in [
         (include_str!("../include/core/qbytearray.h"), "qbytearray.h"),
         (
+            include_str!("../include/core/qcommandlineoption.h"),
+            "qcommandlineoption.h",
+        ),
+        (
             include_str!("../include/core/qcoreapplication.h"),
             "qcoreapplication.h",
         ),

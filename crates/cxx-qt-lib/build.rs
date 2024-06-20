@@ -15,6 +15,7 @@ fn main() {
 
     let mut rust_bridges = vec![
         "core/qbytearray",
+        "core/qcommandlineoption",
         "core/qcoreapplication",
         "core/qdate",
         "core/qhash/qhash_i32_qbytearray",
@@ -172,6 +173,7 @@ fn main() {
 
     let mut cpp_files = vec![
         "core/qbytearray",
+        "core/qcommandlineoption",
         "core/qcoreapplication",
         "core/qdate",
         "core/qhash/qhash",
